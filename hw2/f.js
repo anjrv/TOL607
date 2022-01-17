@@ -18,6 +18,17 @@ rl.on('line', (input) => {
       return val[curr] ? ++val[curr] : (val[curr] = 1), val;
     }, {});
 
+    let N = Object.keys(occurrances).length;
+
+    for (let i = 0; i < N; i++) {
+      const next = Object.keys(occurrances).reduce((a, b) => occurrances[a] >= occurrances[b] ? a : b);
+
+      currVal -= occurrances[next];
+      occurrances[next] = null;
+
+      output += currVal;
+    }
+
     console.log(output);
     process.exit(0);
   }
