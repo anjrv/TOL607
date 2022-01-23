@@ -18,9 +18,9 @@ public class d {
         long res = 0;
 
         for (int i = 1; i < N; i++) {
-            res += Math.abs(nums[i] - nums[i - 1]);
+            res += Math.pow((nums[i] - nums[i - 1]), 2);
         }
 
-        System.out.println(Math.pow(res, 2));
+        System.out.println(res);
     }
 }

@@ -1,24 +1,24 @@
 import java.util.*;
 
 public class c {
-    private static int binaryHelper(int[] knights, int head) {
-        int left = 0;
-        int right = knights.length - 1;
+    // private static int binaryHelper(int[] knights, int head) {
+    //     int left = 0;
+    //     int right = knights.length - 1;
 
-        while (left < right) {
-            int mid = (left + right) / 2;
+    //     while (left < right) {
+    //         int mid = (left + right) / 2;
 
-            if (knights[mid] == head) {
-                return mid;
-            } else if (knights[mid] < head) {
-                left = mid + 1;
-            } else {
-                right = mid - 1;
-            }
-        }
+    //         if (knights[mid] == head) {
+    //             return mid;
+    //         } else if (knights[mid] < head) {
+    //             left = mid + 1;
+    //         } else {
+    //             right = mid - 1;
+    //         }
+    //     }
 
-        return left;
-    }
+    //     return left;
+    // }
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
