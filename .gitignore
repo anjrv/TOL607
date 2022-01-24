@@ -9,4 +9,8 @@
 
 # Java
 *.class
+
+# Book
+*.pdf
+
 .vscode/
