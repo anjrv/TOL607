@@ -10,11 +10,20 @@ let numKnights = 0;
 
 let collides = function (i, j) {
   if (
-    (layout[i - 2] && (layout[i - 2].charAt(j - 1) === 'k' || layout[i - 2].charAt(j + 1) === 'k')) ||
-    (layout[i - 1] && (layout[i - 1].charAt(j - 2) === 'k' || layout[i - 1].charAt(j + 2) === 'k')) ||
-    (layout[i + 1] && (layout[i + 1].charAt(j - 2) === 'k' || layout[i + 1].charAt(j + 2) === 'k')) ||
-    (layout[i + 2] && (layout[i + 2].charAt(j - 1) === 'k' || layout[i + 2].charAt(j + 1) === 'k'))
-  ) return true;
+    (layout[i - 2] &&
+      (layout[i - 2].charAt(j - 1) === 'k' ||
+        layout[i - 2].charAt(j + 1) === 'k')) ||
+    (layout[i - 1] &&
+      (layout[i - 1].charAt(j - 2) === 'k' ||
+        layout[i - 1].charAt(j + 2) === 'k')) ||
+    (layout[i + 1] &&
+      (layout[i + 1].charAt(j - 2) === 'k' ||
+        layout[i + 1].charAt(j + 2) === 'k')) ||
+    (layout[i + 2] &&
+      (layout[i + 2].charAt(j - 1) === 'k' ||
+        layout[i + 2].charAt(j + 1) === 'k'))
+  )
+    return true;
 };
 
 rl.on('line', (input) => {

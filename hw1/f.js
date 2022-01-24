@@ -2,7 +2,7 @@
 const readline = require('readline');
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
 let left = 1;
@@ -16,6 +16,6 @@ rl.on('line', (input) => {
   if (input === 'lower') right = mid - 1;
   if (input === 'higher') left = mid + 1;
 
-  mid = Math.floor((left + right)/2);
+  mid = Math.floor((left + right) / 2);
   console.log(mid);
 });

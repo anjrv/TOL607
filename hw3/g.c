@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int cmp (const void * a, const void * b)
+int cmp(const void *a, const void *b)
 {
-    if( *(long long int*)a - *(long long int*)b < 0 )
+    if (*(long long int *)a - *(long long int *)b < 0)
         return -1;
-    if( *(long long int*)a - *(long long int*)b > 0 )
+    if (*(long long int *)a - *(long long int *)b > 0)
         return 1;
     return 0;
 }

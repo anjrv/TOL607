@@ -2,7 +2,7 @@
 const readline = require('readline');
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
 const nums = [];
@@ -23,4 +23,3 @@ rl.on('line', (input) => {
     process.exit(0);
   }
 });
-

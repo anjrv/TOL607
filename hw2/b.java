@@ -5,11 +5,13 @@ public class b {
         Scanner in = new Scanner(System.in);
         String input = in.nextLine();
 
+        in.close();
+
         String output = input
-            .replace("flatbaka", "petsa")
-            .replace("bauk", "dos")
-            .replace("k", "g")
-            .replace("y", "u");
+                .replace("flatbaka", "petsa")
+                .replace("bauk", "dos")
+                .replace("k", "g")
+                .replace("y", "u");
 
         System.out.println(output);
     }

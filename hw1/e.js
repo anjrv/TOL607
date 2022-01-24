@@ -2,13 +2,12 @@
 const readline = require('readline');
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
 let goal = null;
 
 rl.on('line', (input) => {
-
   if (!goal) {
     goal = input;
   } else {
@@ -25,7 +24,7 @@ rl.on('line', (input) => {
       ctr++;
 
       if (omnom[i] !== 'mumble' && ctr !== parseInt(omnom[i], 10)) {
-        console.log('something is fishy')
+        console.log('something is fishy');
         process.exit(0);
       }
     }
@@ -34,4 +33,3 @@ rl.on('line', (input) => {
     process.exit(0);
   }
 });
-
