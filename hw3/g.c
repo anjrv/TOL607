@@ -34,4 +34,6 @@ int main()
     }
 
     printf("%d\n", wins);
+
+    return 0;
 }
