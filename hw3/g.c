@@ -34,7 +34,7 @@ int main()
         if (ships <= battles[wins])
             break;
 
-        ships -= battles[wins];
+        ships -= (battles[wins] + 1);
     }
 
     printf("%d\n", wins);
