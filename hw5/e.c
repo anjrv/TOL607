@@ -26,40 +26,47 @@ int main()
 
     // the smallest counterexample is less
     // than the sum of the two largest denominations.
-    int maxVal = coins[n - 1] + coins[n - 1];
+    int maxVal = coins[n - 1] << 1;
+    unsigned long mem = maxVal * sizeof(int);
 
-    int dp[maxVal];
-    memset(dp, 1, sizeof(dp));
+    int *dp = malloc(mem);
+    memset(dp, 1, mem);
     dp[0] = 0;
 
-    int greedy[maxVal];
-    memset(greedy, 1, sizeof(greedy));
-    greedy[0] = 0;
+    int *greedy = malloc(mem);
+    memcpy(greedy, dp, mem);
 
     short isValid = 1;
+    int loc = 0;
 
-    for (int i = 0; i < maxVal; i++)
+    for (int i = 1; i < maxVal; i++)
     {
-        for (int j = 0; j < n; j++)
+        while (loc < n - 1 && i >= coins[loc + 1])
         {
-            if (i - coins[j] >= 0)
-            {
-                dp[i] = MIN(dp[i], dp[i - coins[j]] + 1);
-                greedy[i] = greedy[i - coins[j]] + 1;
-            }
+            ++loc;
         }
 
-        if (dp[i] != greedy[i]) {
+        for (int j = 0; j < n && i >= coins[j]; j++)
+        {
+            dp[i] = MIN(dp[i], dp[i - coins[j]] + 1);
+        }
+
+        greedy[i] = greedy[i - coins[loc]] + 1;
+
+        if (dp[i] != greedy[i])
+        {
             isValid = 0;
             break;
         }
     }
 
+    free(dp);
+    free(greedy);
+
     if (isValid)
         printf("canonical\n");
     else
         printf("non-canonical\n");
-
 
     return 0;
 }
