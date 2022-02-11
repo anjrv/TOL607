@@ -22,7 +22,8 @@ int main()
         scanf("%d", &coins[i]);
     }
 
-    qsort(coins, n, sizeof(int), cmp);
+    // should actually be ordered by default
+    // qsort(coins, n, sizeof(int), cmp);
 
     // the smallest counterexample is less
     // than the sum of the two largest denominations.
