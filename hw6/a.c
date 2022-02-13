@@ -9,7 +9,7 @@ int main()
     int len = strlen(input);
 
     int n = 0;
-    char *res = malloc(1000000);
+    char *res = malloc(len + 1); // At most no deletions
 
     for (int i = 0; i <= len; i++)
     {

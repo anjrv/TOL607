@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <iostream>
 #include <string>
 #include <stack>
@@ -28,21 +29,20 @@ int main()
         }
     }
 
-    char *res = (char *)malloc(n + 1);
-
-    if (n > 0)
+    if (n == 0)
     {
-        res[n] = '\n'; // alternatively << endl
-
-        while (!stack.empty())
-        {
-            res[--n] = stack.top();
-            stack.pop();
-        }
-
-        cout << res;
+        return 0;
     }
 
+    char *res = (char *)malloc(n);
+
+    while (!stack.empty())
+    {
+        res[--n] = stack.top();
+        stack.pop();
+    }
+
+    cout << res << endl;
     free(res);
 
     return 0;
