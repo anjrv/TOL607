@@ -6,6 +6,7 @@ void toggle(int BIT[], int FLAG[], int idx, int n)
 {
     int delta = 0;
 
+    // Check if we need to decrement or increment sums
     if (FLAG[idx - 1]) {
         delta = -1;
         FLAG[idx - 1] = 0;
@@ -67,6 +68,9 @@ int main()
             toggle(sums, bits, l, n);
         }
     }
+
+    free(sums);
+    free(bits);
 
     return 0;
 }
