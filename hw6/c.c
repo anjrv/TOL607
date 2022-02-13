@@ -2,26 +2,36 @@
 #include <stdlib.h>
 #include <string.h>
 
-int toggle(int b[], int i)
+void toggle(int BIT[], int FLAG[], int idx, int n)
 {
-    b[i >> 5] ^= (1 << (i & 0x1F));
+    int delta = 0;
 
-    return 0;
-}
-
-// Naive loop count not fast enough
-// Reevaluate - popcount, shift out bits?
-int count(int b[], int l, int r)
-{
-    int count = 0;
-
-    for (int i = l; i < r; i++)
-    {
-        if (b[i >> 5] & (1 << (i & 0x1F)))
-            count++;
+    if (FLAG[idx - 1]) {
+        delta = -1;
+        FLAG[idx - 1] = 0;
+    } else {
+        delta = 1;
+        FLAG[idx - 1] = 1;
     }
 
-    return count;
+    while (idx <= n)
+    {
+        BIT[idx] += delta;
+        idx += idx & (-idx);
+    }
+}
+
+int sum(int BIT[], int idx)
+{
+    int sum = 0;
+
+    while (idx > 0)
+    {
+        sum += BIT[idx];
+        idx -= idx & (-idx);
+    }
+
+    return sum;
 }
 
 int main()
@@ -31,8 +41,11 @@ int main()
 
     scanf("%d %d", &n, &k);
 
-    int *bits = malloc(sizeof(int) * (n / 32 + 1));
-    memset(bits, 0, sizeof(int) * (n / 32 + 1));
+    int *sums = malloc(sizeof(int) * (n + 1));
+    memset(sums, 0, sizeof(int) * (n + 1));
+
+    int *bits = malloc(sizeof(int) * (n));
+    memcpy(bits, sums, sizeof(int) * n);
 
     int l = 0;
     int r = 0;
@@ -46,12 +59,12 @@ int main()
         if (query == 'C')
         {
             scanf("%d %d", &l, &r);
-            printf("%d\n", count(bits, l - 1, r));
+            printf("%d\n", sum(sums, r) - sum(sums, l - 1));
         }
         else
         {
             scanf("%d", &l);
-            toggle(bits, l - 1);
+            toggle(sums, bits, l, n);
         }
     }
 
