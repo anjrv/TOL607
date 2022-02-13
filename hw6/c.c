@@ -45,8 +45,8 @@ int main()
     int *sums = malloc(sizeof(int) * (n + 1));
     memset(sums, 0, sizeof(int) * (n + 1));
 
-    int *bits = malloc(sizeof(int) * (n));
-    memcpy(bits, sums, sizeof(int) * n);
+    int *bits = malloc(sizeof(int) * n);
+    memset(bits, 0, sizeof(int) * n);
 
     int l = 0;
     int r = 0;
