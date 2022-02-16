@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class a {
+public class falling_apart {
   public static void main(String[] args) {
     Scanner in = new Scanner(System.in);
     short N = in.nextShort();

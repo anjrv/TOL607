@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class b {
+public class flexible_spaces {
   public static void main(String[] args) {
     Scanner in = new Scanner(System.in);
 

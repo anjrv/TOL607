@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class c {
+public class loowater {
     // private static int binaryHelper(int[] knights, int head) {
     //     int left = 0;
     //     int right = knights.length - 1;

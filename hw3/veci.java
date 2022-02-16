@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class e {
+public class veci {
     private static int value = 1000000;
     private static int target = 0;
 
