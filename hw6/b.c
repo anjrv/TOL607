@@ -10,7 +10,6 @@ typedef struct conversation
 
 int owner(int i, conversation c[])
 {
-    // Speed this up by updating owner idx?
     while (c[i].idx != i)
     {
         c[i].idx = c[c[i].idx].idx;
@@ -29,7 +28,7 @@ int merge(int i, int j, conversation c[])
     {
         if (c[idx1].size < c[idx2].size)
         {
-            // If 2 is larger then swap
+            // Xor swap
             idx1 = idx1 ^ idx2;
             idx2 = idx1 ^ idx2;
             idx1 = idx1 ^ idx2;

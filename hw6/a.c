@@ -27,6 +27,7 @@ int main()
 
     if (n > 0)
         printf("%s\n", res);
+
     free(res);
 
     return 0;
