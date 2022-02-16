@@ -24,19 +24,19 @@ int merge(int i, int j, conversation c[])
     int idx1 = owner(i, c);
     int idx2 = owner(j, c);
 
-    if (idx1 != idx2)
-    {
-        if (c[idx1].size < c[idx2].size)
-        {
-            // Xor swap
-            idx1 = idx1 ^ idx2;
-            idx2 = idx1 ^ idx2;
-            idx1 = idx1 ^ idx2;
-        }
+    if (idx1 == idx2)
+        return 0;
 
-        c[idx2].idx = idx1;
-        c[idx1].size += c[idx2].size;
+    if (c[idx1].size < c[idx2].size)
+    {
+        // Xor swap
+        idx1 = idx1 ^ idx2;
+        idx2 = idx1 ^ idx2;
+        idx1 = idx1 ^ idx2;
     }
+
+    c[idx2].idx = idx1;
+    c[idx1].size += c[idx2].size;
 
     return 0;
 }

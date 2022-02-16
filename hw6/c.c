@@ -7,18 +7,20 @@ void toggle(int BIT[], int FLAG[], int idx, int n)
     int delta = 0;
 
     // Check if we need to decrement or increment sums
-    if (FLAG[idx - 1]) {
+    if (FLAG[idx - 1])
+    {
         delta = -1;
         FLAG[idx - 1] = 0;
-    } else {
+    }
+    else
+    {
         delta = 1;
         FLAG[idx - 1] = 1;
     }
 
-    while (idx <= n)
+    for (; idx <= n; idx += idx & (-idx))
     {
         BIT[idx] += delta;
-        idx += idx & (-idx);
     }
 }
 
@@ -26,10 +28,9 @@ int sum(int BIT[], int idx)
 {
     int sum = 0;
 
-    while (idx > 0)
+    for (; idx > 0; idx -= idx & (-idx))
     {
         sum += BIT[idx];
-        idx -= idx & (-idx);
     }
 
     return sum;
