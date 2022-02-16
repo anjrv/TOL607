@@ -1,24 +1,6 @@
 import java.util.*;
 
 public class loowater {
-    // private static int binaryHelper(int[] knights, int head) {
-    //     int left = 0;
-    //     int right = knights.length - 1;
-
-    //     while (left < right) {
-    //         int mid = (left + right) / 2;
-
-    //         if (knights[mid] == head) {
-    //             return mid;
-    //         } else if (knights[mid] < head) {
-    //             left = mid + 1;
-    //         } else {
-    //             right = mid - 1;
-    //         }
-    //     }
-
-    //     return left;
-    // }
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -43,7 +25,6 @@ public class loowater {
             } else {
                 Arrays.sort(heads);
                 Arrays.sort(knights);
-                // int currKnight = binaryHelper(knights, heads[0]);
                 int currKnight = 0;
 
                 int coins = 0;
