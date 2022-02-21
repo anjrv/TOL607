@@ -13,13 +13,10 @@ int main()
     long long h;
     int mod = 1000000007;
     
-    cin >> n;
-    cin >> m;
+    cin >> n >> m;
 
     for (int i = 0; i < n; i++) {
-        cin >> name;
-        cin >> h;
-        cin >> s;
+        cin >> name >> h >> s;
 
         for (int j = 0; j < s; j++) {
             cin >> recShip;
@@ -31,9 +28,7 @@ int main()
 
     unsigned long long res = 0;
     for (int i = 0; i < m; i++) {
-        cin >> name;
-        cin >> s;
-
+        cin >> name >> s;
         res += ships[name] * s;
     }
 
