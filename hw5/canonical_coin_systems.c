@@ -4,16 +4,11 @@
 
 #define MIN(X, Y) (((X) > (Y)) ? (Y) : (X))
 
-int cmp(const void *a, const void *b)
-{
-    return (*(int *)a - *(int *)b);
-}
-
 int main()
 {
-    short n = 0;
+    int n = 0;
 
-    scanf("%hd", &n);
+    scanf("%d", &n);
 
     int coins[n];
 
@@ -21,9 +16,6 @@ int main()
     {
         scanf("%d", &coins[i]);
     }
-
-    // should actually be ordered by default
-    // qsort(coins, n, sizeof(int), cmp);
 
     // the smallest counterexample is less
     // than the sum of the two largest denominations.
@@ -37,7 +29,7 @@ int main()
     int *greedy = malloc(mem);
     memcpy(greedy, dp, mem);
 
-    short isValid = 1;
+    int isValid = 1;
     int loc = 0;
 
     for (int i = 1; i < maxVal; i++)

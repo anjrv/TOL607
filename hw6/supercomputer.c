@@ -38,8 +38,8 @@ int sum(int BIT[], int idx)
 
 int main()
 {
-    int n = 0;
-    int k = 0;
+    int n, k, l, r;
+    char query;
 
     scanf("%d %d", &n, &k);
 
@@ -48,10 +48,6 @@ int main()
 
     int *bits = malloc(sizeof(int) * n);
     memset(bits, 0, sizeof(int) * n);
-
-    int l = 0;
-    int r = 0;
-    char query = 'X';
 
     for (int i = 0; i < k; i++)
     {

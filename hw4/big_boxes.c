@@ -24,12 +24,10 @@ int subSum(int s[], int n, int k)
 
 int main()
 {
-    int n = 0;
-    int k = 0;
+    int n, k;
     scanf("%d", &n);
     scanf("%d", &k);
 
-    // int *s = malloc(n * sizeof(int));
     int s[n];
 
     for (int i = 0; i < n; i++)

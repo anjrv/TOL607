@@ -12,8 +12,8 @@ int cmp(const void *a, const void *b)
 
 int main()
 {
-    int systems = 0;
-    long long ships = 0;
+    int systems;
+    long long ships;
 
     scanf("%d", &systems);
     scanf("%lld", &ships);

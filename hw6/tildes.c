@@ -43,8 +43,8 @@ int merge(int i, int j, conversation c[])
 
 int main()
 {
-    int n = 0;
-    int q = 0;
+    int n, q, a, b;
+    char query;
 
     scanf("%d %d", &n, &q);
 
@@ -56,10 +56,6 @@ int main()
         guests[i].idx = i;
         guests[i].size = 1;
     }
-
-    int a = 0;
-    int b = 0;
-    char query = 'X';
 
     for (int i = 0; i < q; i++)
     {

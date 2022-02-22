@@ -4,27 +4,24 @@
 
 int main()
 {
-    short r = 0;
-    short c = 0;
+    int r, c;
 
-    scanf("%hd %hd", &r, &c);
-
+    scanf("%d %d", &r, &c);
     char *map = malloc(r * c);
-
-    short bX = -1;
-    short bY = -1;
-    short dirX = 0;
-
     char *subStr = malloc(c + 1);
 
-    for (short i = 0; i < r; i++)
+    int bX = -1;
+    int bY = -1;
+    int dirX = 0;
+
+    for (int i = 0; i < r; i++)
     {
         scanf("%s", subStr);
 
         // Find the boulder
         if (bX == -1)
         {
-            for (short j = 0; j < c; j++)
+            for (int j = 0; j < c; j++)
             {
                 if (subStr[j] == 'B')
                 {
@@ -41,8 +38,8 @@ int main()
 
     free(subStr);
 
-    short dead = 0;
-    short descending = 0;
+    int dead = 0;
+    int descending = 0;
     while (1)
     {
         char currB = map[bY * c + bX];

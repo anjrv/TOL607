@@ -4,7 +4,7 @@
 
 int main()
 {
-    int x1, x2, y1, y2, hitX, hitY, n;
+    int x1, x2, y1, y2, n, hitX, hitY;
 
     scanf("%d %d %d %d", &x1, &x2, &y1, &y2);
     scanf("%d", &n);

@@ -6,8 +6,7 @@
 
 int main()
 {
-    int capacity = 0;
-    int n = 0;
+    int capacity, n;
 
     while (scanf("%d %d", &capacity, &n) == 2)
     {

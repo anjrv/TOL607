@@ -15,14 +15,13 @@ typedef struct floor
 
 int main()
 {
-    int n = 0;
-    unsigned long long s = 0;
+    int n, opps;
+    unsigned long long s;
 
     scanf("%d %llu", &n, &s);
 
     floor *floors = malloc(sizeof(floor) * n);
 
-    int opps = 0;
     for (int i = 0; i < n; i++)
     {
         scanf("%d", &opps);

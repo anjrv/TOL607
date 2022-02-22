@@ -8,8 +8,8 @@ int main()
     scanf("%s", input);
     int len = strlen(input);
 
-    int n = 0;
     char *res = malloc(len + 1); // At most no deletions
+    int n = 0;
 
     for (int i = 0; i <= len; i++)
     {
