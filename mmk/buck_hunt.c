@@ -4,21 +4,12 @@
 
 int main()
 {
-    int x1 = 0;
-    int x2 = 0;
-    int y1 = 0;
-    int y2 = 0;
+    int x1, x2, y1, y2, hitX, hitY, n;
 
     scanf("%d %d %d %d", &x1, &x2, &y1, &y2);
-
-    int n = 0;
-
     scanf("%d", &n);
 
     int hits = 0;
-
-    int hitX = 0;
-    int hitY = 0;
     for (int i = 0; i < n; i++) {
         scanf("%d %d", &hitX, &hitY);
 
