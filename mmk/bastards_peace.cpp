@@ -54,6 +54,7 @@ int main()
     while (!prio.empty())
     {
         pair<long long, int> curr = prio.top();
+        prio.pop();
 
         if (curr.first >= s)
         {
@@ -61,16 +62,18 @@ int main()
             break;
         }
 
-        s += floors[curr.second].strengths[floors[curr.second].loc++];
+        int f = curr.second;
 
-        prio.pop();
-        if (floors[curr.second].loc < floors[curr.second].cnt)
+        s += floors[f].strengths[floors[f].loc++];
+
+        if (floors[f].loc < floors[f].cnt)
         {
-            prio.push(make_pair(floors[curr.second].opps[floors[curr.second].loc], curr.second));
+            prio.push(make_pair(floors[f].opps[floors[f].loc], f));
         }
     }
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
         free(floors[i].opps);
         free(floors[i].strengths);
     }
