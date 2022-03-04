@@ -15,13 +15,15 @@ int main()
 
     for (int i = 0; i < n; i++)
     {
+        int idx = i * m;
         for (int j = 0; j < m; j++)
         {
             cin >> num;
             // Each digit is between 0 and 9, inclusive.
             // Should be able to use - '0' to convert
-            grid[i * m + j] = num - '0';
-            dist[i * m + j] = -1;
+            int idxJ = idx + j;
+            grid[idxJ] = num - '0';
+            dist[idxJ] = -1;
         }
     }
 
@@ -43,14 +45,17 @@ int main()
 
         for (int i = 0; i < 4; i++)
         {
-            int curr = grid[row * m + col];
+            int idx1 = row * m + col;
+            int curr = grid[idx1];
+
             int nextRow = row + drow[i] * curr;
             int nextCol = col + dcol[i] * curr;
+            int idx2 = nextRow * m + nextCol;
 
-            if (nextRow < 0 || nextRow >= n || nextCol < 0 || nextCol >= m || dist[nextRow * m + nextCol] != -1)
+            if (nextRow < 0 || nextRow >= n || nextCol < 0 || nextCol >= m || dist[idx2] != -1)
                 continue;
 
-            dist[nextRow * m + nextCol] = dist[row * m + col] + 1;
+            dist[idx2] = dist[idx1] + 1;
             q.push({nextRow, nextCol});
         }
     }
