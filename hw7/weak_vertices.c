@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX(X, Y) (((X) > (Y)) ? (X) : (Y))
-
 int main()
 {
     int n;
