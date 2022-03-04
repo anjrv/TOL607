@@ -4,6 +4,9 @@
 
 using namespace std;
 
+int dcol[] = {0, 0, 1, -1};
+int drow[] = {1, -1, 0, 0};
+
 int main()
 {
     int n, m;
@@ -28,8 +31,6 @@ int main()
     }
 
     dist[0] = 0;
-    int dcol[] = {0, 0, 1, -1};
-    int drow[] = {1, -1, 0, 0};
 
     queue<pair<int, int>> q;
     q.push({0, 0});
