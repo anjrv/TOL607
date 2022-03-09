@@ -62,6 +62,7 @@ int main()
     }
 
     cout << dist[(n - 1) * m + m - 1] << endl;
+
     free(grid);
     free(dist);
 

@@ -3,7 +3,6 @@
 #include <limits.h>
 
 #define MAX(X, Y) (((X) > (Y)) ? (X) : (Y))
-#define MIN(X, Y) (((X) > (Y)) ? (Y) : (X))
 
 int subSum(int s[], int n, int k)
 {

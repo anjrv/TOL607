@@ -6,14 +6,15 @@ using namespace std;
 
 typedef pair<int, pair<int, int>> pipii_t;
 
-int n, m, u, v, w;
-priority_queue<pipii_t, vector<pipii_t>, greater<pipii_t>> prio;
-vector<vector<pair<int, int>>> adjacents;
-vector<pair<int, int>> tree;
-vector<bool> taken;
-
 int main()
 {
+    priority_queue<pipii_t, vector<pipii_t>, greater<pipii_t>> prio;
+    vector<vector<pair<int, int>>> adjacents;
+    vector<pair<int, int>> tree;
+    vector<bool> taken;
+
+    int n, m, u, v, w;
+
     int iter = 0;
     while (1)
     {

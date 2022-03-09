@@ -16,10 +16,6 @@ bool cmp(edge start, edge end)
     return start.distSq < end.distSq;
 }
 
-int tc, n;
-
-vector<pair<long double, long double>> freckles;
-vector<edge> edges;
 vector<int> mins;
 
 int find(int idx)
@@ -48,8 +44,13 @@ int join(int start, int end)
 int main()
 {
     cout << fixed << setprecision(2);
+    vector<pair<long double, long double>> freckles;
+    vector<edge> edges;
+
+    int tc, n;
 
     cin >> tc;
+
     int iter = 0;
 
     for (int i = 0; i < tc; i++)

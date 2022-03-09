@@ -6,7 +6,7 @@
 
 int main()
 {
-    int n = 0;
+    int n;
 
     scanf("%d", &n);
 

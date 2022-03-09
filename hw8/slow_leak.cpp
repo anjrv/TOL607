@@ -11,10 +11,10 @@ vector<int> dists[512];
 
 int main()
 {
+    // Assign high values
+    memset(intersects, 1, sizeof(intersects));
     memset(roads, 1, sizeof(roads));
     roads[0][0] = 0;
-
-    memset(intersects, 1, sizeof(intersects));
 
     // n represents the number of intersections in the city,
     // m represents the number of roads in the city,

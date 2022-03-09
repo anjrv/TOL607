@@ -4,7 +4,7 @@
 
 int main()
 {
-    long long n = 0;
+    long long n;
     scanf("%lld", &n);
 
     double x = log(n);
