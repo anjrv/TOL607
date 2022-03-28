@@ -24,13 +24,16 @@ int main()
 
     cin >> n;
         
-    for (i = 0; i < n; i++)
-        cin >> x >> y, points.push_back({x, y});
+    for (i = 0; i < n; i++) {
+        cin >> x >> y;
+        points.push_back({x, y});
+    }
 
     int j = 0;
     int k = 0;
     sort(points.begin(), points.end());
 
+    // Construct convex hull
     lower.resize(2 * n);
     upper.resize(2 * n);
     for (i = 0; i < n; i++)
