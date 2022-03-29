@@ -34,8 +34,8 @@ int main()
     sort(points.begin(), points.end());
 
     // Construct convex hull
-    lower.resize(2 * n);
-    upper.resize(2 * n);
+    lower.reserve(2 * n);
+    upper.reserve(2 * n);
     for (i = 0; i < n; i++)
     {
         while (j >= 2 && cross(lower[j - 2], lower[j - 1], points[i]) <= 0)
@@ -46,8 +46,9 @@ int main()
         upper[k++] = points[i];
     }
 
-    upper.resize(k);
-    lower.resize(j);
+    // Unnecessary, bounds are known
+    // upper.resize(k);
+    // lower.resize(j);
 
     double maxDist = 0;
     i = 0;

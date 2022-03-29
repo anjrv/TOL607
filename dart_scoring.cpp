@@ -26,7 +26,7 @@ int main()
         double x, y;
         int i = 0;
         int n = 0;
-        vector<pair<double, double>> points, upper, lower;
+        vector<pair<double, double>> points;
 
         while (sin >> x >> y)
         {
@@ -34,13 +34,16 @@ int main()
             n++;
         }
 
-        int j = 0;
-        int k = 0;
         sort(points.begin(), points.end());
 
         // Construct convex hull
-        lower.resize(2 * n);
-        upper.resize(2 * n);
+        int j = 0;
+        int k = 0;
+        vector<pair<double, double>> lower; 
+        vector<pair<double, double>> upper; 
+        lower.reserve(2 * n);
+        upper.reserve(2 * n);
+
         for (i = 0; i < n; i++)
         {
             while (j >= 2 && cross(lower[j - 2], lower[j - 1], points[i]) <= 0)
@@ -50,9 +53,6 @@ int main()
             lower[j++] = points[i];
             upper[k++] = points[i];
         }
-
-        upper.resize(k);
-        lower.resize(j);
 
         double dist = 0;
 
